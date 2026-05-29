@@ -5,6 +5,13 @@ interface ProjectCardProps {
   project: Project;
 }
 
+function getMimeType(url: string): string {
+  if (url.endsWith('.png')) return 'image/png';
+  if (url.endsWith('.jpg') || url.endsWith('.jpeg')) return 'image/jpeg';
+  if (url.endsWith('.webp')) return 'image/webp';
+  return 'image/*';
+}
+
 export default function ProjectCard({ project }: ProjectCardProps) {
   const [imgSrc, setImgSrc] = useState(project.thumbnailUrl);
 
@@ -17,7 +24,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       {/* Thumbnail */}
       <div className="relative overflow-hidden bg-gray-100 dark:bg-gray-700 aspect-video">
         <picture>
-          <source srcSet={project.thumbnailUrl} type="image/webp" />
+          <source srcSet={project.thumbnailUrl} type={getMimeType(project.thumbnailUrl)} />
           <img
             src={imgSrc}
             alt={`${project.title} screenshot`}
