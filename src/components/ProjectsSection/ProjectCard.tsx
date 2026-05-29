@@ -16,7 +16,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   const [imgSrc, setImgSrc] = useState(project.thumbnailUrl);
 
   const handleImageError = () => {
-    setImgSrc('/images/placeholder.webp');
+    setImgSrc('images/placeholder.webp');
   };
 
   return (

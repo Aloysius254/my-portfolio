@@ -2,7 +2,7 @@ import { ownerData } from '../../data/owner';
 
 export default function AboutSection() {
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    e.currentTarget.src = '/images/placeholder.webp';
+    e.currentTarget.src = 'images/placeholder.webp';
   };
 
   return (
