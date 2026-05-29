@@ -7,7 +7,7 @@ export const projectsData: Project[] = [
     description:
       'A fully responsive portfolio built with React, TypeScript, and Tailwind CSS. Features dark/light mode, smooth navigation, project filtering, and a contact form. Deployed via GitHub Actions to GitHub Pages.',
     technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
-    thumbnailUrl: 'images/dashboard.png',
+    thumbnailUrl: 'images/portfolio.png',
     liveUrl: 'https://aloysius254.github.io/my-portfolio/',
     repoUrl: 'https://github.com/Aloysius254/my-portfolio',
     date: '2024-12-01',
