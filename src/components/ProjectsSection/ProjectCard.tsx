@@ -21,18 +21,40 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <article className="flex flex-col bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-100 dark:border-gray-700 group">
-      {/* Thumbnail */}
+      {/* Thumbnail — click to view full size */}
       <div className="relative overflow-hidden bg-gray-100 dark:bg-gray-700 aspect-video">
-        <picture>
-          <source srcSet={project.thumbnailUrl} type={getMimeType(project.thumbnailUrl)} />
-          <img
-            src={imgSrc}
-            alt={`${project.title} screenshot`}
-            loading="lazy"
-            onError={handleImageError}
-            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-          />
-        </picture>
+        <a
+          href={project.thumbnailUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`View full size image of ${project.title}`}
+          className="block w-full h-full"
+        >
+          <picture>
+            <source srcSet={project.thumbnailUrl} type={getMimeType(project.thumbnailUrl)} />
+            <img
+              src={imgSrc}
+              alt={`${project.title} screenshot`}
+              loading="lazy"
+              onError={handleImageError}
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          </picture>
+          {/* Zoom overlay hint */}
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-10 w-10 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-lg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+              aria-hidden="true"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0zm-6-3v6m-3-3h6" />
+            </svg>
+          </div>
+        </a>
       </div>
 
       {/* Content */}
