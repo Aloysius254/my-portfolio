@@ -48,18 +48,13 @@ const TwitterXIcon = () => (
 const socialLinks: SocialLink[] = [
   {
     label: 'GitHub',
-    href: 'https://github.com',
+    href: 'https://github.com/Aloysius254',
     icon: <GitHubIcon />,
   },
   {
     label: 'LinkedIn',
-    href: 'https://linkedin.com',
+    href: 'https://linkedin.com/in/aloysius-mworia',
     icon: <LinkedInIcon />,
-  },
-  {
-    label: 'Twitter / X',
-    href: 'https://x.com',
-    icon: <TwitterXIcon />,
   },
 ];
 

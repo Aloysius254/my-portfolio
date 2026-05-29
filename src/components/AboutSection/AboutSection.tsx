@@ -16,7 +16,7 @@ export default function AboutSection() {
         </h2>
 
         <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
-          {/* Profile photo — left column on desktop */}
+          {/* Profile photo */}
           <div className="flex-shrink-0">
             <picture>
               <source srcSet={ownerData.photoUrl} type="image/webp" />
@@ -30,7 +30,7 @@ export default function AboutSection() {
             </picture>
           </div>
 
-          {/* Bio + resume — right column on desktop */}
+          {/* Bio + contact + resume */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left gap-6">
             <div>
               <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-1">
@@ -39,9 +39,46 @@ export default function AboutSection() {
               <p className="text-indigo-600 dark:text-indigo-400 font-medium mb-4">
                 {ownerData.title}
               </p>
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed max-w-prose">
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed max-w-prose mb-4">
                 {ownerData.bio}
               </p>
+
+              {/* Education */}
+              <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+                🎓 B.Sc. Information Technology — Zetech University, Nairobi (2022 – Present)
+              </p>
+
+              {/* Contact links */}
+              <div className="flex flex-col sm:flex-row gap-3 items-center md:items-start">
+                <a
+                  href={`mailto:${ownerData.email}`}
+                  className="inline-flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                >
+                  ✉ {ownerData.email}
+                </a>
+                <a
+                  href={`tel:${ownerData.phone}`}
+                  className="inline-flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                >
+                  📞 {ownerData.phone}
+                </a>
+                <a
+                  href={ownerData.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                >
+                  GitHub
+                </a>
+                <a
+                  href={ownerData.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                >
+                  LinkedIn
+                </a>
+              </div>
             </div>
 
             <a
