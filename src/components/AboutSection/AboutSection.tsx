@@ -1,4 +1,4 @@
-import { ownerData } from '../../data/owner';
+import { ownerData, educationData, experienceData } from '../../data/owner';
 
 export default function AboutSection() {
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
@@ -15,7 +15,8 @@ export default function AboutSection() {
           About Me
         </h2>
 
-        <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+        {/* Top row: photo + bio */}
+        <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16 mb-16">
           {/* Profile photo */}
           <div className="flex-shrink-0">
             <picture>
@@ -43,13 +44,8 @@ export default function AboutSection() {
                 {ownerData.bio}
               </p>
 
-              {/* Education */}
-              <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
-                🎓 B.Sc. Information Technology — Zetech University, Nairobi (2022 – Present)
-              </p>
-
               {/* Contact links */}
-              <div className="flex flex-col sm:flex-row gap-3 items-center md:items-start">
+              <div className="flex flex-wrap gap-3 items-center justify-center md:justify-start">
                 <a
                   href={`mailto:${ownerData.email}`}
                   className="inline-flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
@@ -101,6 +97,62 @@ export default function AboutSection() {
               </svg>
               Download Resume
             </a>
+          </div>
+        </div>
+
+        {/* Education & Experience two-column grid */}
+        <div className="grid md:grid-cols-2 gap-12">
+          {/* Education */}
+          <div>
+            <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-6 flex items-center gap-2">
+              <span aria-hidden="true">🎓</span> Education
+            </h3>
+            <ol className="relative border-l border-indigo-200 dark:border-indigo-800 space-y-6 pl-6">
+              {educationData.map((edu) => (
+                <li key={edu.institution} className="relative">
+                  <span className="absolute -left-[1.35rem] top-1 flex h-4 w-4 items-center justify-center rounded-full bg-indigo-500 ring-4 ring-white dark:ring-gray-900" aria-hidden="true" />
+                  <p className="text-xs font-medium text-indigo-600 dark:text-indigo-400 mb-0.5">
+                    {edu.period}
+                  </p>
+                  <p className="font-semibold text-gray-800 dark:text-gray-100 text-sm">
+                    {edu.qualification}
+                  </p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    {edu.institution}
+                  </p>
+                </li>
+              ))}
+            </ol>
+          </div>
+
+          {/* Work Experience */}
+          <div>
+            <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-6 flex items-center gap-2">
+              <span aria-hidden="true">💼</span> Experience
+            </h3>
+            <ol className="relative border-l border-indigo-200 dark:border-indigo-800 space-y-8 pl-6">
+              {experienceData.map((exp) => (
+                <li key={exp.role + exp.organisation} className="relative">
+                  <span className="absolute -left-[1.35rem] top-1 flex h-4 w-4 items-center justify-center rounded-full bg-indigo-500 ring-4 ring-white dark:ring-gray-900" aria-hidden="true" />
+                  <p className="text-xs font-medium text-indigo-600 dark:text-indigo-400 mb-0.5">
+                    {exp.period}
+                  </p>
+                  <p className="font-semibold text-gray-800 dark:text-gray-100 text-sm">
+                    {exp.role}
+                  </p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
+                    {exp.organisation}
+                  </p>
+                  <ul className="list-disc list-inside space-y-1">
+                    {exp.responsibilities.map((r) => (
+                      <li key={r} className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                        {r}
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ))}
+            </ol>
           </div>
         </div>
       </div>

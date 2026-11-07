@@ -2,6 +2,26 @@ import type { SkillCategory } from '../types';
 
 export const skillsData: SkillCategory[] = [
   {
+    category: 'IT Support & Hardware',
+    skills: [
+      { label: 'Hardware Troubleshooting & Repairs', proficiency: 4 },
+      { label: 'Software Installation & Maintenance', proficiency: 5 },
+      { label: 'Antivirus Management (ESET)', proficiency: 4 },
+      { label: 'Computer Lab Management', proficiency: 4 },
+    ],
+  },
+  {
+    category: 'Networking',
+    skills: [
+      { label: 'LAN Structuring & Configuration', proficiency: 4 },
+      { label: 'Ethernet Cable Installation & Repair', proficiency: 4 },
+      { label: 'TCP/IP & Subnetting', proficiency: 4 },
+      { label: 'Network Troubleshooting', proficiency: 4 },
+      { label: 'Router & Switch Setup', proficiency: 3 },
+      { label: 'Wi-Fi / Guest Network Management', proficiency: 4 },
+    ],
+  },
+  {
     category: 'Web Development',
     skills: [
       { label: 'HTML', proficiency: 5 },
@@ -16,15 +36,6 @@ export const skillsData: SkillCategory[] = [
     skills: [
       { label: 'PHP', proficiency: 3 },
       { label: 'Python', proficiency: 3 },
-    ],
-  },
-  {
-    category: 'Networking',
-    skills: [
-      { label: 'TCP/IP', proficiency: 4 },
-      { label: 'LAN Configuration', proficiency: 4 },
-      { label: 'IP Addressing & Subnetting', proficiency: 4 },
-      { label: 'Router & Switch Setup', proficiency: 3 },
     ],
   },
   {
