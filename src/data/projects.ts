@@ -58,4 +58,31 @@ export const projectsData: Project[] = [
     thumbnailUrl: 'images/Analytics.png',
     date: '2024-03-01',
   },
+  {
+    id: 'project-7',
+    title: 'ChatCart — WhatsApp Order Management Platform',
+    description:
+      'A multi-tenant SaaS platform where small businesses get an online store and customers send orders directly to WhatsApp. Features custom JWT authentication, role-based access (owner/superadmin), M-Pesa payment integration, order history tracking, and a superadmin dashboard. CI/CD via GitHub to Render with Turso cloud database.',
+    technologies: ['React', 'TypeScript', 'Node.js', 'Express', 'SQLite', 'JWT', 'Turso'],
+    thumbnailUrl: 'images/chatcart.png',
+    date: '2025-08-01',
+  },
+  {
+    id: 'project-8',
+    title: 'Sentinel Security System',
+    description:
+      'A full-stack endpoint security monitoring platform for Windows laptops and Android phones. The Windows agent monitors login events, USB insertions, process activity, and network changes. The Android agent tracks GPS, detects SIM swaps, and supports remote lock/wipe. Backed by a Node.js/TypeScript REST + WebSocket server with JWT auth, role-based access control, tamper-evident audit logs, and a real-time React dashboard with risk scoring and FCM push for offline devices.',
+    technologies: ['Python', 'Node.js', 'TypeScript', 'React', 'Android (Kotlin)', 'MySQL', 'WebSocket', 'Firebase FCM'],
+    thumbnailUrl: 'images/analysis.png',
+    date: '2025-09-01',
+  },
+  {
+    id: 'project-9',
+    title: 'Digital Forensic Analysis Tool',
+    description:
+      'A desktop forensic analysis tool for investigating digital evidence. Supports file carving, metadata extraction, and disk image analysis with a focus on maintaining chain of custody and following forensic best practices.',
+    technologies: ['Python', 'Digital Forensics', 'File Carving', 'Metadata Analysis'],
+    thumbnailUrl: 'images/dashboard.png',
+    date: '2025-10-01',
+  },
 ];
