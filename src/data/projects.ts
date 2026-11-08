@@ -18,7 +18,7 @@ export const projectsData: Project[] = [
     description:
       'An endpoint security monitoring platform for Windows laptops and Android phones. Monitors logins, USB activity, running processes, network changes, and device location, with remote lock and wipe. Backed by a REST and WebSocket server with JWT authentication, role-based access control, signed commands, and tamper-evident audit logs.',
     technologies: ['Python', 'Node.js', 'TypeScript', 'React', 'Kotlin', 'MySQL', 'WebSocket', 'Firebase FCM'],
-    thumbnailUrl: 'images/Sentinel Forensics.png',
+    thumbnailUrl: 'images/Sentinel security.png',
     date: '2025-09-01',
   },
   {
